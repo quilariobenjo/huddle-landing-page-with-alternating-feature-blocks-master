@@ -1,0 +1,299 @@
+@import "variable";
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+* {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    padding:0;
+    margin: 0 auto;
+    max-width: 1600px;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+h1, h2, h3 ,h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+p {
+    font-size: 1.1rem;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+footer {
+    width: 100%;
+    background: $veryDarkCyan;
+}
+
+.btn {
+    position: relative;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none; 
+}
+
+.header {
+    max-height: 100%;
+    background: url('../images/bg-hero-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    padding: 55px 55px;
+    background-color: $veryPaleCyan;
+    @include breakpoint-down(medium) {
+        background: url('../images/bg-hero-mobile.svg');
+        padding: 26px 24px;
+    }
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &--logo {
+            img {
+                height: 33px;
+                @include breakpoint-down(small) {
+                    height: 20px;
+                 }
+            }
+        }
+        &--a {
+            a {
+                padding: 12px 60px;
+                background-color: #fff;
+                font-weight: 600;
+                box-shadow: 0 2px 2px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+                border-radius: 50px;
+                &:hover {
+                    opacity: 0.8;
+                }
+                @include breakpoint-down(small) {
+                    padding: 7px 13px;
+                    font-weight: 400;
+                    font-size: 0.7rem;
+                 }
+            }
+        }
+    }
+
+
+    //Section cta
+    .cta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 0 0;
+        @include breakpoint-down(medium) {
+            padding: 3rem 0 0;
+            flex-direction: column;
+            text-align: center;
+        }
+        &__text {
+            flex: 1 0 43%;
+            color: $veryDarkCyan;
+            margin-right: 42px;
+            @include breakpoint-down(medium) {
+               margin: 0 0 3rem;
+
+            }
+            h1 {
+                font-size: 2.5rem;
+                @include breakpoint-down(small) {
+                    font-size: 1.7rem;
+                 }
+            }
+    
+            .btn--cta {
+                color: $veryPaleCyan;
+                background-color: $pink;
+                border: none;
+                height: 57px;
+                width: 278px;
+                font-size: 0.9rem;
+                font-weight: 600;
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+        }
+        &__img {
+            flex: 1 0 53%;
+        }
+    }
+}
+.features {
+    padding: 180px 63px 0;
+    @include breakpoint-down(medium) {
+        padding: 60px 24px 0;
+    }
+    @include breakpoint-down(medium) {
+        .features-1,.features-2, .features-3  {
+            text-align: center;
+            padding: 1.5rem;
+        }
+        .features-1, .features-3 {
+            flex-direction: column-reverse;
+        }
+        .features-2 {
+            flex-direction: column;
+        }
+     }
+}
+.features-1, .features-2, .features-3 {
+        display: flex;
+        //-content: space-evenly;
+        align-items: center;
+        margin-bottom: 30px;
+        //box-shadow: 0 0px 6px rgba(0, 0, 0, / 5%), 0 3px 6px rgba(0, 0, 0, / 5%);
+        box-shadow: 0 0px 6px rgba(0,0,0,0.05), 0 3px 6px rgba(0,0,0,0.05);
+        padding: 30px;
+        @include breakpoint-down(medium) {
+            margin-bottom: 30px;
+        }
+        &__content {
+            padding: 0 100px;
+            h2 {
+                font-size: 1.8rem;
+            }
+            p {
+                color: $veryDarkCyan
+            }
+            @include breakpoint-down(medium) {
+                padding: 0;
+            }
+        }
+        &__img {
+            img {
+                width: 100%;
+                
+            }
+        }
+}
+.floating__card {
+    position: relative;
+    text-align: center;
+    width: 58vw;
+    margin: 0 auto;
+    height: 270px;
+    min-height: 240px;
+    padding: 30px 0;
+    border-radius: 10px;
+    transform: translateY(50%);
+    background-color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    //box-shadow: 0 -2px 6px rgba(0, 0, 0,  5%), 0 3px 6px rgba(0, 0, 0,  5%);
+    
+    z-index: 2;
+    h2 {
+        font-size: 2rem;
+    }
+    .btn__floating {
+        padding: 25px 90px;
+        background-color: $pink;
+        border: none;
+        color: $veryPaleCyan;
+        font-size: 1.1rem;
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    @include breakpoint-down(medium){
+        width: 100%;
+        padding: 20px 0;
+        img {
+            height: 60px;
+        }
+            h2 {
+                font-size: 1.7rem;
+                margin: 0;
+            }
+        .btn__floating {
+            padding: 12px 40px;
+            font-size: 1rem;
+        }
+    }
+}
+//footer
+.footer {
+    position: relative;
+    padding: 220px 64px 120px;
+    display: flex;
+    @include breakpoint-down(medium) {
+        padding: 170px 40px 50px;
+        flex-direction: column;
+    }
+    &__logo {
+        img {
+            padding-right: 1rem;
+        }
+    flex: 2;
+        span {
+            color: $veryPaleCyan;
+        }
+    }
+    &__links {
+        flex: 1;
+        align-self: flex-end;
+        @include breakpoint-down(medium) {
+            align-self: flex-start;
+            ul {
+                padding: 0;
+            }
+        }
+        ul li{
+            padding-bottom: 1.3rem;
+        }
+        a {
+           color: $veryPaleCyan;
+        &:hover {
+            text-decoration: underline;
+        }
+        }
+    }
+    &__more-links {
+        flex: 1;
+        align-self:flex-end;
+        @include breakpoint-down(medium) {
+            align-self: flex-start;
+            ul {
+                padding: 0;
+            }
+        }
+        ul li{
+            padding-bottom: 1rem;
+        }
+        a {
+            color: $veryPaleCyan;
+        }
+    }
+    &__social-icon {
+        flex: 1;
+        align-self: center;
+        position: relative;
+        .fab {
+            color: $veryPaleCyan;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: .4rem;
+            border: 1px solid $veryPaleCyan;
+            border-radius: 50%;
+            &:not(:last-child) {
+                margin-right: 10px;
+            } 
+            &:hover {
+                color: $pink;
+                border: 1px solid $pink;
+            }
+        }
+    }
+}
